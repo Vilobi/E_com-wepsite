@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="small-contanier">
+        <div class="row"> 
+            
+                <div class="col-4">
+                
+                    <a href=""><img src="\static\fucture\{{data.images}}" width="300px" height="250px"></a>
+                    
+                    <form action="" method="post">
+
+                        <h4>{{data.name}}</h4>
+
+
+
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                    <input type="hidden" name="img" value="{{data['images']}}">
+
+
+                    <input type="hidden" name="code" value="{{data['code']}}">
+
+                    
+                    <label for="qulity">Qulity</label>
+                    <input type="number" name="quantity" id="qulity">
+
+                    <input type="number" name="price" value="{{data['price']}}">
+                    
+                    <input type="submit" value="add_cart">
+                    
+                    </form>
+                </div>
+           
+        </div>
+    </div>
+</body>
+</html>

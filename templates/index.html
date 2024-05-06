@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+
+    <title>Snep-deal</title>
+</head>
+<body>
+<div class="heder">
+    <div class="container">
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="{{url_for('static',filename='Snep.png')}}" width="125px">
+            </div>
+        
+
+        
+            <nav>
+                <ul class="bar">
+                    <li id="N"><a href="{{url_for('home')}}" id="A">Home</a></li>
+                    <li id="N"><a href="" id="A">Products</a></li>
+                    <li id="N"><a href="" id="A">About</a></li>
+                    <li id="N"><a href="" id="A">Contacts</a></li>
+                    <li id="N"><a href="" id="A">Account</a></li>
+                </ul>
+            </nav>
+
+            <a href="{{url_for('cart')}}"><img src="{{url_for('static',filename='cart1.png')}}" width="30px" height="30px"></a>
+
+
+            
+        </div>
+
+            <div class="row">
+                <div class="col-2">
+
+                    <h1>Welcome to Shopping</h1>
+                    <p>
+                        Creating an online shopping process involves several<br> key steps to ensure a smooth and<br> intuitive experience for users. Here's an outline <br>.</p>
+                </div>
+
+                <div class="col-2">
+                    <img src="{{url_for('static',filename='main1.jpeg')}}">
+                </div>
+            </div>
+    </div>
+</div>
+    
+  
+
+
+
+    <!-- Body -->
+
+        <div class="categori">
+
+            <div class="small-contanier">
+                <div class="row">
+                    <div class="col-3"><img src="{{url_for('static',filename='avif1.jpg')}}" width="200px" height="400px"></div>
+                    <div class="col-3"><img src="{{url_for('static',filename='avif2.jpg')}}" width="200px" height="400px"></div>
+                    <div class="col-3"><img src="{{url_for('static',filename='avif3.jpg')}}" width="200px" height="400px"></div>
+                </div>
+            </div>
+            
+        </div>  
+
+        <!-- Fucture -->
+
+        <div class="small-contanier">
+            <h2 class="title"> Futured Products</h2>
+            <div class="row"> 
+                {% for i in data %}
+                    <div class="col-4">
+                    
+                        <a href="{{url_for('add',id=i.id)}}"><img src="\static\fucture\{{i.images}}" width="300px" height="250px"></a>
+                        
+                        <form action="" method="post">
+
+                            <h4>{{i.name}}</h4>
+
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+
+                        <input type="hidden" name="img" value="{{i['images']}}">
+
+                        <input type="text" name="code" value="{{i['code']}}">
+
+                        <span class="fa fa-arrow-right">${{i.price}} </span> 
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+                
+
+
+            <h2 class="title"> Latest Products</h2>
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='avif7.jpeg')}}" width="300px" height="250px">
+                    <h4>White printed t-shirt</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='cooker1.jpeg')}}" width="300px" height="250px">
+                    <h4>I phone 14'n</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='samsung1.jpeg')}}" width="300px" height="250px">
+                    <h4>Yellow printed Shoses</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='watch1.jpeg')}}" width="300px" height="250px">
+                    <h4>Green printed Sarry</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='avif7.jpeg')}}" width="300px" height="250px">
+                    <h4>White printed t-shirt</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='furnicture1.jpeg')}}" width="300px" height="250px">
+                    <h4>I phone 14'n</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='shoses2.jpeg')}}" width="300px" height="250px">
+                    <h4>Yellow printed Shoses</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="{{url_for('static',filename='women6.jpeg')}}" width="300px" height="250px">
+                    <h4>Green printed Sarry</h4>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p>$50.0</p>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- Offer -->
+
+        <div class="offer">
+            <div class="small-contanier">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="{{url_for('static',filename='offer.jpeg')}}" class="offer-img">
+                    </div>
+                    <div class="col-2">
+                        <p>Exclusively Avlieble on Snepdeal</p>
+                        <h1>The Audi offer</h1>
+                        <small>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas</small>
+
+                        <a href="" class="btn">Buy Now &#8594;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testminmol -->
+
+        <div class="testinmol">
+            <div class="small-contanier">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <p>Snapdeal does not select, edit, modify, alter, add or supplement the information, <br>description and other specifications provided by the Seller.</p>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <img src="{{url_for('static',filename='report1.jpeg')}}">
+                        <h3>Jhon</h3>
+                    </div>
+
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <p>Snapdeal does not select, edit, modify, alter, add or supplement the information, <br>description and other specifications provided by the Seller.</p>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <img src="{{url_for('static',filename='report.jpg')}}">
+                        <h3>Martin</h3>
+                    </div>
+
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <p>Snapdeal does not select, edit, modify, alter, add or supplement the information, <br>description and other specifications provided by the Seller.</p>
+                        <div class="rating">
+                            <span  class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <img src="{{url_for('static',filename='report2.jpg')}}">
+                        <h3>Peter</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!-- brands -->
+
+          <div class="brands">
+            <div class="small-contanier">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="{{url_for('static',filename='bajaj.png')}}">
+                    </div>
+
+                    <div class="col-5">
+                        <img src="{{url_for('static',filename='phonepe.png')}}">
+                    </div>
+
+                    <div class="col-5">
+                        <img src="{{url_for('static',filename='union.png')}}">
+                    </div>
+
+                    <div class="col-5">
+                        <img src="{{url_for('static',filename='mahindra.png')}}">
+                    </div>
+
+                   
+                </div>
+            </div>
+          </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download the app</h3>
+                    <p>Download App for Android  and Ios mopile phone </p>
+                    <div class="app-logo">
+                        <img src="{{url_for('static',filename='palystore.png')}}">
+
+                        <img src="{{url_for('static',filename='app.png')}}">
+
+                    </div>
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="{{url_for('static',filename='Snep.png')}}" width="130px" height="60px">
+                    <p>Our purpose is to in very usefill app in snep.. </p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>usefull links</h3>
+                    <ul>
+                        <li><a href="">Snepdeal</a></li>
+                        <li><a href="">Amzon</a></li>
+                        <li><a href="">Meso</a></li>
+                        <li><a href="">Flibcart</a></li>
+                    </ul>
+                </div>  
+                
+                <div class="footer-col-4">
+                    <h3>Fllow us</h3>
+                    <ul>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Twiter</a></li>
+                        <li><a href="">Instagrame</a></li>
+                        <li><a href="">You tupe</a></li>
+                    </ul>
+                </div>  
+            </div>
+
+            <hr>
+            <p class="by">by Vilobin....</p>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

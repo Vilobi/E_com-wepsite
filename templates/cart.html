@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .total-row td {
+            text-align: right;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="{{url_for('static',filename='Snep.png')}}" width="125px">
+        </div>
+    
+
+    
+        <nav>
+            <ul class="bar">
+                <li id="N"><a href="{{url_for('home')}}" id="A">Home</a></li>
+                <li id="N"><a href="" id="A">Products</a></li>
+                <li id="N"><a href="" id="A">About</a></li>
+                <li id="N"><a href="" id="A">Contacts</a></li>
+                <li id="N"><a href="" id="A">Account</a></li>
+            </ul>
+        </nav>
+
+        <a href="{{url_for('cart')}}"><img src="{{url_for('static',filename='cart1.png')}}" width="30px" height="30px"></a>
+    </div>
+
+    <table>
+        <tr>
+            <th>images</th>
+            <th>code</th>
+            <th>Quantity</th>
+            <th>price</th>
+            <th>total</th>
+            
+        </tr>
+
+      
+        {% for i in data %}
+        <tr>
+            <td><img src="\static\fucture\{{i.images}}" width="100px" height="50px"></td>
+            <td>{{i.code}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.price}}</td>
+            <td>${{i.total}}</td>
+            
+        </tr>
+        {% endfor %}
+
+        <tr>
+            <td colspan="4"><strong>Final Total</strong></td>
+            <td>${{ final_total }}</td>
+        </tr>     
+        
+    </table>
+
+    
+</body>
+</html>

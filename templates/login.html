@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('login.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          
+          .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+          }
+          
+          .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          
+          .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+          
+          .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+          
+          .login-form button:hover {
+            background-color: #0056b3;
+          }
+          .anger{
+          
+            width: 100%;
+            padding: 10px;
+            
+            color: #1c1919;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            margin-top: 10px;
+          
+          }
+    </style>
+</head>
+<body>
+
+  {{the_list}}
+    <div class="login-container">
+        <form class="login-form" action="" method="post">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" name="username">
+            <input type="password" placeholder="Password" name="password">
+            <button type="submit">Login</button>
+            <a href="{{url_for('signup')}}" class="anger">Aru new user..?</a>
+        </form>
+    </div>
+</body>
+</html>
